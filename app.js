@@ -22,7 +22,6 @@ app.use(cors());
 app.use(bodyParser.json()); // support json encoded bodies
 
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-// app.use('/', express.static('build'));
 let oneYear = 31536000; // seconds of one year
 app.use(express.static('build',{ maxAge: oneYear }));
 /* setting up the routes */

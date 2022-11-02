@@ -7,11 +7,6 @@ const { appendFile } = require("fs");
 require("dotenv").config();
 const url = process.env.JSONPOST_URL;
 
-// router.get('/', function(req, res, next) {
- 
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'))
-// });
-
 router.get("/post", async (req, res) => {
   try {
     const results = await post.getPostData(url);
