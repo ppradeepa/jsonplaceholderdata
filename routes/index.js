@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const post = require("./postData");
-var path = require("path");
 const { appendFile } = require("fs");
 
 
