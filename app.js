@@ -24,7 +24,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname+ "/build/" + "index.html"));
+  res.sendFile(path.join(__dirname+ "../build/" + "index.html"));
 });
 let oneYear = 31536000; // seconds of one year
 app.use(express.static('build',{ maxAge: oneYear }));
