@@ -8,7 +8,12 @@ var timeout = require('connect-timeout')
 
 /* setting up the express app engine */
 const app = express();
-app.use(timeout('5s'))
+app.use(timeout(120000));
+app.use(haltOnTimedout);
+
+function haltOnTimedout(req, res, next){
+  if (!req.timedout) next();
+}
 
 app.use(cors());
 /* returns middleware that only parses urlencoded bodies */
