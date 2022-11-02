@@ -4,9 +4,11 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const routes = require("./routes");
 const dotenv = require('dotenv').config();
+var timeout = require('connect-timeout')
 
 /* setting up the express app engine */
 const app = express();
+app.use(timeout('5s'))
 
 app.use(cors());
 /* returns middleware that only parses urlencoded bodies */
